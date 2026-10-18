@@ -1,0 +1,436 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Tells the browser: "If background-color or text color changes, take 0.4 seconds to fade it smoothly." */
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+body.dark-mode{
+    background-color: #121212;
+    color: #ffffff;
+}
+
+body.dark-mode .features, 
+body.dark-mode .feedback{
+    background-color: #121212;
+    color: #ffffff;
+}
+
+body.dark-mode .feature-card,
+body.dark-mode .testimonial-card{
+    background-color: #2c2c2c;
+    color: #ffffff;
+    border: 2px solid #444;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .feature-card h3,
+body.dark-mode .feature-card p,
+body.dark-mode .testimonial-card h4,
+body.dark-mode .testimonial-card p,
+body.dark-mode .feature-header p,
+body.dark-mode .feedback-header p {
+    color: #e0e0e0; /* Off-white text so it isn't too harsh on the eyes */
+}
+
+body .dark-mode .site-footer{
+    background-color: #1a1f24;
+    color: #e2e8f0;
+}
+
+
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 50px;
+    
+    position : fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    z-index: 1000;
+
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #00b7ff;
+    transition: all 0.3s ease;
+}
+
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .right-head {
+        display: block;
+        flex-direction: column;
+        position: absolute;
+        top: 93px;
+        left: -100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        width: 100%;
+        padding: 30px 0;
+        text-align: center;
+        transition: left 0.3s ease;
+        gap: 20px;
+    }
+
+    .right-head ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .right-head.active {
+        left: 0;
+    }
+}
+
+
+
+
+.left-head{
+    padding: 10px;
+}
+.left-head h1{
+    font-size: 30px;
+    color: #00b7ff;
+}
+
+.right-head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.right-head ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+
+.right-head ul li{
+    list-style: none;
+    font-size: 20px;
+    color: #00b7ff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+li a{
+    text-decoration: none;
+    color: #00b7ff;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+li a:hover{
+    color: #ff0000;
+}
+
+.head-btn {
+    padding: 10px 20px;
+    background-color: #00b7ff;
+    color: #fff;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid #00b7ff;
+    transition: all 0.3s ease  ;
+}
+.head-btn:hover{
+    border: 2px solid #ff0000;
+    background-color: #ff0000;
+}
+
+#theme-toggle {
+    padding: 10px 20px;
+    background-color: #101111;
+    color: #fff;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid #ffffff;
+}
+
+#theme-toggle:hover {
+    border: none;
+    background-color: #000000;
+}
+
+main{
+    display: block;
+}
+
+.main-content{
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 50px;
+    background: url(image.png) no-repeat center center/cover;
+}
+
+.main-head1 {
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    font-size: 50px;
+    color: #00b7ff;
+    margin-bottom: 2px;
+}
+.main-head3 {
+    font-size: 30px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.main-para {
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.main-btns{
+    display: flex;
+    gap: 20px;
+}
+
+.main-btn2{
+    padding: 10px 20px;
+    border: 2px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: transparent;
+    color: white;
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+.main-btn2:hover{
+    background-color: #00b7ff;
+    border: 2px solid #00b7ff;
+    color: white;
+}
+
+.features{
+    
+    padding: 50px 20px;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    
+}
+
+.feature-head{
+    font-size: 50px;
+    color: #00b7ff;
+    margin-bottom: 20px;
+}
+
+.feature-header h2{
+    font-size: 30px;
+    color: #00b7ff;
+    margin-bottom: 20px;
+}
+.feature-header p{
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.feature-cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.feature-card{
+    background-color: #fdf7f7;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px); /* Slight lift on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.feedback{
+    padding: 50px 20px;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+}
+
+.feedback-head{
+    font-size: 50px;
+    color: #00b7ff;
+    margin-bottom: 20px;
+}
+
+.feedback-header h2{
+    font-size: 30px;
+    color: #00b7ff;
+    margin-bottom: 20px;
+}
+.feedback-header p{
+    font-size: 20px;
+    color: #222;
+    margin-bottom: 20px;
+}
+
+.testimonial-cards{
+    display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Slightly wider minimum width than feature cards */
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.testimonial-card{
+    background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid #e1e5ea; /* Subtle border */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stars{
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.testimonial-card h4{
+    font-size: 1.1rem;
+    color: #0f1112;
+    margin-bottom: 10px;
+}
+
+.testimonial-card p{
+    font-size: 0.9rem;
+    color: #4b5563;
+    line-height: 1.5;
+}
+
+.testimonial-card .author{
+    font-size: 0.85rem;
+    color: #6b7280;
+    margin-top: 15px;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Main Footer Background and Typography */
+.site-footer {
+  background-color: #1a1f24; /* Dark modern grey */
+  color: #e2e8f0; /* Light text for readability */
+  padding: 60px 20px 20px 20px;
+  font-family: sans-serif;
+}
+
+/* Grid layout for the footer columns */
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #334155; /* Subtle dividing line */
+}
+
+/* Column Headers */
+.footer-column h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.footer-column h4 {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.footer-column p {
+  line-height: 1.5;
+  color: #94a3b8;
+  margin-bottom: 20px;
+}
+
+/* List styling to remove default bullets */
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 12px;
+}
+
+/* Link Styling */
+.footer-column a {
+  color: #94a3b8;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-column a:hover {
+  color: #ffffff; /* Turns white when you hover */
+}
+
+/* Social Links Layout */
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Bottom Copyright Bar */
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  color: #64748b;
+  font-size: 0.9rem;
+}
